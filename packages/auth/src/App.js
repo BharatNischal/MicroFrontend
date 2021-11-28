@@ -2,11 +2,11 @@ import React from 'react';
 import { Switch, Route, Router } from 'react-router-dom';
 import { StylesProvider, createGenerateClassName } from '@material-ui/styles';
 
-import Pricing from './components/Pricing';
-import Landing from './components/Landing';
+import SignIn from './components/Signin';
+import SignUp from './components/Signup';
 
 const generateClassName = createGenerateClassName({
-    productionPrefix: 'mar'
+    productionPrefix: 'au'
 });
 
 const App = ({ history }) => {
@@ -14,8 +14,8 @@ const App = ({ history }) => {
         <StylesProvider generateClassName={generateClassName}>
             <Router history={history}>
                 <Switch>
-                    <Route exact path="/pricing" component={Pricing} />
-                    <Route path="/" component={Landing} />
+                    <Route path="/auth/signin" component={SignIn} />
+                    <Route path="/auth/signup" component={SignUp} />
                 </Switch>
             </Router>
         </StylesProvider>
