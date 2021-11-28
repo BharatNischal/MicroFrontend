@@ -13,7 +13,8 @@ const AuthApp = () => {
                 if (pathname !== nextPathname) {
                     history.push(nextPathname);
                 }
-            }
+            },
+            initialPath: history.location.pathname,
         });
 
         history.listen(onParentNavigate);
